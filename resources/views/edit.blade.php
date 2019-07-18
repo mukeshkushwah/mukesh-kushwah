@@ -1,4 +1,4 @@
-@extends('products.layout')
+@extends('layout')
 
    
 
@@ -16,7 +16,7 @@
 
             <div class="pull-right">
 
-                <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('product.index') }}"> Back</a>
 
             </div>
 
@@ -48,7 +48,7 @@
 
   
 
-    <form action="{{ route('products.update',$product->id) }}" method="POST">
+    <form action="{{ route('product.update',$product->id) }}" method="POST">
 
         @csrf
 

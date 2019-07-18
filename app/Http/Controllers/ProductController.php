@@ -94,7 +94,7 @@ class ProductController extends Controller
 
   
 
-        return redirect()->route('index')
+        return redirect()->route('product.index')
 
                         ->with('success','Product updated successfully');
 
