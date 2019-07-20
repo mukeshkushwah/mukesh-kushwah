@@ -16,3 +16,12 @@ Route::get('/', function () {
 });
 
 Route::resource('product','ProductController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('send/email', 'ProductController@mail');
+
+Route::get('getcount', 'ProductController@getCountries');
+
+Route::get('getstate', 'ProductController@getStates');

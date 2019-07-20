@@ -1,0 +1,1 @@
+<div>This mail send to {{$name}}</div>
