@@ -58,4 +58,45 @@
     </div>
 </form>
 
+<script>  
+import {Container} from './Vue-Bootstrap-with-Material-Design-4.4.1/src/main'
+    export default {
+        mounted() {
+            console.log('Component mounted.')
+        },
+
+        data(){
+            return {
+
+                country: 0,
+                countries: [],
+                state: 0,
+                states: []
+            }
+        },
+
+        methods:{
+            getCountries: function(){
+              axios.get('/api/getCountries')
+              .then(function (response) {
+                 this.countries = response.data;
+              }.bind(this));
+            },
+
+            getStates: function() {
+                axios.get('/api/getStates',{
+                 params: {
+                   country_id: this.country
+                 }
+              }).then(function(response){
+                    this.states = response.data;
+                }.bind(this));
+            }
+        },
+        created: function(){
+            this.getCountries()
+        }
+    }
+</script>
+
 @endsection
